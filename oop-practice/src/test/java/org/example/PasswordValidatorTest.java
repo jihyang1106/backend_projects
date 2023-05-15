@@ -25,7 +25,6 @@ public class PasswordValidatorTest {
     @ParameterizedTest
     @ValueSource(strings = {"aabbcce", "aaaabbbbccccd"})
     void validatePasswordTest2(String password) {
-
         assertThatCode(() -> PasswordValidator.validate(password))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("비밀번호는 8자 이상 12자 이하!");

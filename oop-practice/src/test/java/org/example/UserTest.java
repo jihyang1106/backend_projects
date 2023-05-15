@@ -14,7 +14,7 @@ public class UserTest {
         User user = new User();
 
         // when
-        user.initPassword(()->"abcdefgh");
+        user.initPassword(new CorrectFixedPasswordGenerator());
 
         // then
         assertThat(user.getPassword()).isNotNull();

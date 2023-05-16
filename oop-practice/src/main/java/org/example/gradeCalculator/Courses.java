@@ -9,18 +9,17 @@ public class Courses {
         this.courses = courses;
     }
 
-    public double multiplyCreditAndCourseGrade() {
+    public double multipliedCreditAndGrade() {
 //        (1)
-//        double multipliedCreditAndCourseGrade = 0;
+//        double multipliedCreditAndGrade = 0;
 //        for(Course course : courses) {
-//            multipliedCreditAndCourseGrade += course.multipliedCreditAndCourseGrade();
+//            multipliedCreditAndGrade += course.multipliedCreditAndGrade();
 //        }
-//        return multipliedCreditAndCourseGrade;
+//        return multipliedCreditAndGrade;
 
 //        (2)
         return courses.stream()
-                .mapToDouble(Course::multipliedCreditAndCourseGrade).sum();
-
+                .mapToDouble(Course::multipliedCreditAndGrade).sum();
     }
 
     public int calculateTotalCompletedCredit() {

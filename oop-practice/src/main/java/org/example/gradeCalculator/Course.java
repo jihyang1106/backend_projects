@@ -12,7 +12,7 @@ public class Course {
 
     }
 
-    public double multipliedCreditAndCourseGrade() {
+    public double multipliedCreditAndGrade() {
         return credit * getGradeToNumber();
     }
 

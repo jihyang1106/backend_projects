@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fe5a2566-1041-48e7-9451-9e780af043f1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/oop-practice/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/oop-practice/.idea/gradle.xml" afterDir="false" />
-    </list>
+    <list default="true" id="fe5a2566-1041-48e7-9451-9e780af043f1" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,7 +23,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/USER/Desktop/backend_projects/mvc-project",
+    "last_opened_file_path": "C:/Users/USER/Desktop/backend_projects/oop-practice",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -38,6 +36,7 @@
       <option name="presentableId" value="Default" />
       <updated>1684130792634</updated>
       <workItem from="1684130794383" duration="19000" />
+      <workItem from="1684248608860" duration="60000" />
     </task>
     <servers />
   </component>

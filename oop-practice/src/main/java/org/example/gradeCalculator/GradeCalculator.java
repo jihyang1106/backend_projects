@@ -48,7 +48,7 @@ public class GradeCalculator {
 
 //        (3)
         double totalCompletedCredit = courses.calculateTotalCompletedCredit();
-        
+
         return multipliedCreditAndCourseGrade / totalCompletedCredit;
 
     }

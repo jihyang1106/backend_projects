@@ -9,6 +9,5 @@ public class HomeController implements Controller {
     @Override
     public String handleRequest(HttpServletRequest req, HttpServletResponse res) {
         return "home.jsp";
-//        return "home";
     }
 }

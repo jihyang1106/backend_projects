@@ -23,6 +23,7 @@ public class DispatcherServlet extends HttpServlet {
     // 톰켓이 HttpServlet을 싱글톤 객체로 하나 만들면서 init 메서드가 호출되면서 해당 맵 초기화
     private RequestMappingHandlerMapping reqHandlerMapping;
 
+    // 초기화 작업은 톰켓이 servlet이 생성할 때
     @Override
     public void init() throws ServletException {
         // 꼭 객체를 생성하고 초기화 하기! (그냥 초기화만 하면 오류)
@@ -34,27 +35,14 @@ public class DispatcherServlet extends HttpServlet {
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         log.info("[DispatcherServlet] service started.");
 
-//        try {
-//            // 핸들러 매핑을 통해서 handler를 찾는다. => 요청 url에 대한 처리할 수 있는 handler를 달라!
-//            Controller handler = reqHandlerMapping.findHandler(req.getRequestURI());
-//            // handler로 부터 적절한 controller를 받으면 controller에게 작업을 위임한다.
-//            String viewName = handler.handleRequest(req, resp);
-//
-//            // 해당하는 뷰로 전달!
-//            RequestDispatcher reqDispatcher = req.getRequestDispatcher(viewName);
-//            reqDispatcher.forward(req,resp);
-//        }catch (Exception e) {
-//            log.error("exception occured [{}]", e.getMessage(), e);
-//            throw new ServletException(e);
-//        }
-            // 핸들러 매핑을 통해서 handler를 찾는다. => 요청 url에 대한 처리할 수 있는 handler를 달라!
-            Controller handleRequest = reqHandlerMapping.findHandler(req.getRequestURI());
-            // handler로 부터 적절한 controller를 받으면 controller에게 작업을 위임한다.
-            String viewName = handleRequest.handleRequest(req, resp);
+        // 핸들러 매핑을 통해서 handler를 찾는다. => 요청 url에 대한 처리할 수 있는 handler를 달라!
+        Controller handler = reqHandlerMapping.findHandler(req.getRequestURI());
+        // handler로 부터 적절한 controller를 받으면 controller에게 작업을 위임한다.
+        String viewName = handler.handleRequest(req, resp);
 
-            // 해당하는 뷰로 전달!
-            RequestDispatcher reqDispatcher = req.getRequestDispatcher(viewName);
-            reqDispatcher.forward(req,resp);
+        // 해당하는 뷰로 전달!
+        RequestDispatcher reqDispatcher = req.getRequestDispatcher(viewName);
+        reqDispatcher.forward(req,resp);
 
     }
 }

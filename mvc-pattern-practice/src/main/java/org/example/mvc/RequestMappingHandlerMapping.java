@@ -8,7 +8,8 @@ import java.util.Map;
 
 public class RequestMappingHandlerMapping {
 
-    // key: /users {value} UserController
+    // 키는 urlPath, 벨류는 그에 관련한 controller
+    // ex) key: /users 경로일때 value : UserController
     private Map<String, Controller> mapping = new HashMap<>();
 
     void init() {
@@ -16,7 +17,8 @@ public class RequestMappingHandlerMapping {
         mapping.put("/", new HomeController());
     }
 
-    public Controller findHandler(String uriPath) {
-        return mapping.get(uriPath);
+    // uriPath와 일치하는 컨트롤러를 리턴해주는 메서드
+    public Controller findHandler(String path) {
+        return mapping.get(path);
     }
 }

@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <title>home</title>
-    <link rel="icon" href="data:;base64,=">
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
 </head>
 <body>
 Home 페이지

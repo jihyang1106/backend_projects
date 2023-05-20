@@ -1,0 +1,33 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    // WAS인 embeded tomcat
+    implementation 'org.apache.tomcat.embed:tomcat-embed-core:8.5.42'
+    implementation 'org.apache.tomcat.embed:tomcat-embed-jasper:8.5.42'
+
+    // 톰캣은 서블릿을 실행
+    implementation 'javax.servlet:javax.servlet-api:4.0.1'
+    // 간단한 JSP 화면 구성
+    implementation 'javax.servlet:jstl:1.2'
+    // log 출력
+    implementation 'ch.qos.logback:logback-classic:1.2.3'
+
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+
+
+}
+
+test {
+    useJUnitPlatform()
+}
